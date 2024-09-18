@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "sobre-mi"
+        "mis-proyectos"
+        "proyectos"
+        "contacto"
+        "footer";
+    grid-gap: 20px;
+    padding: 20px;
+    background-color: #ccc;
+}
+
+header {
+    font-family: "Mochiy Pop One", sans-serif;
+    grid-area: header;
+    background-color: #f39354;
+    color: rgb(6, 5, 5);
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#sobre-mi {
+    grid-area: sobre-mi;
+    padding: 20px;
+    background-color: #f1eded;
+    border-radius: 8px;
+}
+
+#mis-proyectos {
+    grid-area: mis-proyectos;
+    padding: 10px;
+    background-color: #f3b87d;
+    border-radius: 8px;
+}
+
+#proyectos {
+    grid-area: proyectos;
+    padding: 20px;
+    background-color: #fed695;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna para pantallas pequñas */
+    grid-gap: 20px;
+}
+#proyectos div {
+    background-color: rgb(231, 230, 230);
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden; /* Para asegurar que las imágenes no se salgan del contenedor */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#proyectos div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#proyectos div img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    border-radius: 8px 8px 0 0;
+}
+
+#contacto {
+    grid-area: contacto;
+    padding: 20px;
+    background-color: #f1eded;
+    text-align: center;
+    border-radius: 8px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Media Queries para la responsividad */
+
+@media (min-width: 768px) {
+    #proyectos {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
+    }
+}
+
+/* Para pantallas de escritorio mínimo 1024px de anchho */
+@media (min-width: 1024px) {
+    #proyectos {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas en escritorios */
+    }
+}
